@@ -4,13 +4,19 @@ This is a marketplace application built using Django 1.9
 #Installing
 #It's a simple, painless process. Clone or download the repository
 
-cd venv
+cd Oja-
 
 pip install -r requirements.txt
 
 #Running the application
 
 #Equally simple,Straight-forward and painless
+
+Activate the virtual environment
+
+venv\scripts\activate
+
+cd src
 
 python manage.py runserver
 
