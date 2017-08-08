@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+<!DOCTYPE html>
+
+
+	<title>{% block head %} Log out | {{ block.super }} {% endblock %}</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+{% block content %}
+	<div class="container text-center">
+	<h1>Logout Successful</h1>
+	<p>Click <a href="/posts/login"><input type="submit" class="btn btn-link" value="here"></a> to login again</p>
+	</div>
+	<section class="our_client">
+				<h4 class="title"><span class="text">Local Farmers</span></h4>
+				<div class="row">					
+					<div class="span2">
+						<a href="#"><img alt="" src='{% static "img/1.png" %}'></a>
+					</div>
+					<div class="span2">
+						<a href="#"><img alt="" src='{% static "img/2.png" %}'></a>
+					</div>
+					<div class="span2">
+						<a href="#"><img alt="" src='{% static "img/14.png" %}'></a>
+					</div>
+					<div class="span2">
+						<a href="#"><img alt="" src='{% static "img/3.png" %}'></a>
+					</div>
+					<div class="span2">
+						<a href="#"><img alt="" src='{% static "img/35.png" %}'></a>
+					</div>
+					<div class="span2">
+						<a href="#"><img alt="" src='{% static "img/4.png" %}'></a>
+					</div>
+				</div>
+			</section>
+			<section id="footer-bar">
+				<div class="row">
+					<div class="span3">
+						<h4>Navigation</h4>
+						<ul class="nav">
+							<li><a href="/posts/">iFarm</a></li>  
+							<li><a href="/posts/real_sign_up">Sign Up</a></li>
+							<li><a href="#">Contact Us</a></li>
+							<li><a href="/posts/login">Login</a></li>							
+						</ul>					
+					</div>
+					<div class="span4">
+						<h4>My Account</h4>
+						<ul class="nav">
+							<li><a href="#">My Account</a></li>
+							<li><a href="#">Order History</a></li>
+							<li><a href="#">Wish List</a></li>
+							<li><a href="#">Newsletter</a></li>
+						</ul>
+					</div>
+					<div class="span5">
+						<p class="logo"><img src='{% static "img/logo.png" %}' class="site_logo" alt=""></p>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. the  Lorem Ipsum has been the industry's standard dummy text ever since the you.</p>
+						<br/>
+						<span class="social_icons">
+							<a class="facebook" href="#">Facebook</a>
+							<a class="twitter" href="#">Twitter</a>
+							<a class="skype" href="#">Skype</a>
+							<a class="vimeo" href="#">Vimeo</a>
+						</span>
+					</div>					
+				</div>	
+			</section>
+<section id="copyright">
+        <span>Copyright 2017 iFarm. All rights reserved.</span>
+      </section>
+{% endblock %}

@@ -1,0 +1,7 @@
+{% if messages %}
+	<ul class="messages">
+		{% for message in messages %}
+			<small{% if message.tags %} class="{{ message.tags }}" style="font-family: Roboto"{% endif %}>{{ message }}</small>
+		{% endfor %}
+	</ul>
+	{% endif %}

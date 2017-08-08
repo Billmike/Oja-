@@ -1,0 +1,113 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <title>My Admin - is a responsive admin template</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'css/secdashboard/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Menu CSS -->
+    <link href="{% static 'css/secdashboard/metisMenu.min.css' %}" rel="stylesheet">
+    <!-- Menu CSS -->
+    <link href="{% static 'css/secdashboard/morris.css' %}" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{% static 'css/secdashboard/style.css' %}" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+
+{% block content %}
+<div class="preloader">
+        <div class="cssload-speeding-wheel"></div>
+    </div>
+    <div id="wrapper">
+<nav class="navbar navbar-default navbar-static-top" style="margin-bottom: 0">
+            <div class="navbar-header"> <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="fa fa-bars" aria-hidden="true"></i></a>
+                <div class="top-left-part"><a class="logo" href="index.html"><i class="fa fa-fire" aria-hidden="true"></i>&nbsp;<span class="hidden-xs">My Admin</span></a></div>
+                <ul class="nav navbar-top-links navbar-left hidden-xs">
+                    <li><a href="javascript:void(0)" class="open-close hidden-xs hidden-lg
+ waves-effect waves-light"><i class="ti-arrow-circle-left fa fa-bars"></i>
+</a></li>
+                </ul>
+                <ul class="nav navbar-top-links navbar-right pull-right">
+                    <li>
+                        <a class="profile-pic" href="#"> <img src="{% static 'img/hritik.jpg' %}" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">Maruti</b> </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-header -->
+            <!-- /.navbar-top-links -->
+            <!-- /.navbar-static-side -->
+        </nav>
+        <div class="navbar-default sidebar nicescroll" role="navigation">
+            <div class="sidebar-nav navbar-collapse ">
+                <ul class="nav" id="side-menu">
+                    <li class="sidebar-search hidden-sm hidden-md hidden-lg">
+                        <div class="input-group custom-search-form">
+                            <input type="text" class="form-control" placeholder="Search...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button"><i class="ti-search"></i> </button>
+                            </span>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="/posts/dashboard" class="waves-effect"><i class="fa fa-fire" aria-hidden="true"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#" class="waves-effect"><i class="fa fa-user" aria-hidden="true"></i>Profile</a>
+                    </li>
+                    <li>
+                        <a href="/posts/create/" class="waves-effect"><i class="fa fa-upload" aria-hidden="true"></i>Upload Product</a>
+                    </li>
+                    <li>
+                        <a href="/posts/sales_chart/" class="waves-effect"><i class="fa fa-line-chart"></i> Revenue</a>
+                    </li>
+                    <li>
+                        <a href="map-google.html" class="waves-effect"><i class="/posts/logout/"></i> Log Out</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- /.sidebar-collapse -->
+        </div>
+     <div class="container">   
+	<h1>Product Upload</h1>
+	<form method="POST" action="" enctype="multipart/form-data">
+	{% csrf_token %}
+	{% load crispy_forms_tags %}
+	{% crispy form %}
+	<input type="submit" class="btn btn-primary" value="Upload Product">
+	</form>
+	</div>
+	</div>
+
+	<script src="{% static 'js/secdashboard/jquery.min.js' %}"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'js/secdashboard/bootstrap.min.js' %}"></script>
+    <!-- Menu Plugin JavaScript -->
+    <script src="{% static 'js/secdashboard/metisMenu.min.js' %}"></script>
+    <!--Nice scroll JavaScript -->
+    <script src="{% static 'js/secdashboard/nicescroll.js' %}"></script>
+    <!--Morris JavaScript -->
+    <script src="{% static 'js/secdashboard/raphael-min.js' %}"></script>
+    <script src="{% static 'js/secdashboard/morris.js' %}"></script>
+    <!--Wave Effects -->
+    <script src="{% static 'js/secdashboard/waves.js' %}"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="{% static 'js/secdashboard/myadmin.js' %}"></script>
+    <script src="{% static 'js/secdashboard/dashboard1.js' %}"></script>
+
+{% endblock %}

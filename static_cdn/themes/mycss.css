@@ -1,0 +1,14 @@
+h1.title{
+	padding-bottom:5px;
+	margin-bottom:15px;
+	overflow:hidden;
+	text-transform:uppercase;
+	font-size:40px;
+	font-family: Roboto;
+	min-height:27px;
+	width:100%;
+	text-decoration: bold;
+	text-align: center;
+	text-shadow: #f00;
+
+}

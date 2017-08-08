@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+
+
+<section class="main-content">
+<div class="row">
+<div class="span12">													
+<div class="row">
+<div class="span12">
+	<h4 class="title">
+		<span class="pull-left"><span class="text"><span class="line">Feature <strong>Products</strong></span></span></span>
+		<span class="pull-right">
+			<a class="left button" href="#myCarousel" data-slide="prev"></a><a class="right button" href="#myCarousel" data-slide="next"></a>
+		</span>
+	</h4>
+	<div id="myCarousel" class="myCarousel carousel slide">
+		<div class="carousel-inner">
+			<div class="active item">
+				<ul class="thumbnails">	
+				{% for obj in object_list %}										
+					<li class="span3">
+						<div class="product-box">
+							<span class="sale_tag"></span>
+							{% if obj.product_image %}
+							<p><a href="product_detail.html"><img src="{{ obj.product_image.url }}" alt="" /></a></p>
+							{% endif %}
+			<a href="{{ obj.get_absolute_url }}" class="title">{{ obj.product_name }}</a><small> {{ obj.time_posted | timesince}}</small><br/>
+			<a href="products.html" class="category">{{ obj.product_description }}</a>
+							<p class="price">N{{ obj.product_price }}</p>
+			<a href="{{ obj.get_absolute_url }}" class="btn btn-link" role="button">View</a>
+			<br>
+			<br>
+			<a href = "/posts/send_quotes/" class = "btn btn-link" role = "button">
+               Contact Seller
+            </a>
+						</div>
+					</li>
+
+					{% endfor %}
+				</ul>
+			</div>
+			
+		</div>
+		<br>							
+	</div>
+</div>						
+</div>
+<br/>
+<div class="pagination">
+	<span class="step-links">
+		{% if object_list.has_previous %}
+			<a href="?{{ page_request_var }}={{ object_list.previous_page_number }}">previous</a>
+		{% endif %}
+		<span class="current">
+			Page {{ object_list.number }} of {{ object_list.paginator.num_pages }}
+		</span>
+		{% if object_list.has_next %}
+			<a href="?{{ page_request_var }}={{ object_list.next_page_number }}">next</a>
+		{% endif %}
+	</span>
+</div>
+
+<div class="row feature_box">						
+<div class="span4">
+	<div class="service">
+		<div class="responsive">	
+			<img src='{% static "img/feature_img_2.png" %}' alt="" />
+			<h4>MODERN <strong>DESIGN</strong></h4>
+			<p>Lorem Ipsum is simply dummy text of the printing and printing industry unknown printer.</p>									
+		</div>
+	</div>
+</div>
+<div class="span4">	
+	<div class="service">
+		<div class="customize">			
+			<img src='{% static "img/feature_img_1.png" %}' alt="" />
+			<h4>FREE <strong>SHIPPING</strong></h4>
+			<p>Lorem Ipsum is simply dummy text of the printing and printing industry unknown printer.</p>
+		</div>
+	</div>
+</div>
+<div class="span4">
+	<div class="service">
+		<div class="support">	
+			<img src='{% static "img/feature_img_3.png" %}' alt="" />
+			<h4>24/7 LIVE <strong>SUPPORT</strong></h4>
+			<p>Lorem Ipsum is simply dummy text of the printing and printing industry unknown printer.</p>
+		</div>
+	</div>
+</div>	
+</div>		
+</div>				
+</div>
+</section>
+<section class="our_client">
+				<h4 class="title"><span class="text">Our Farmers</span></h4>
+				<div class="row">					
+					<div class="span2">
+						<a href="#"><img alt="" src='{% static "img/1.png" %}'></a>
+					</div>
+					<div class="span2">
+						<a href="#"><img alt="" src='{% static "img/2.png" %}'></a>
+					</div>
+					<div class="span2">
+						<a href="#"><img alt="" src='{% static "img/14.png" %}'></a>
+					</div>
+					<div class="span2">
+						<a href="#"><img alt="" src='{% static "img/3.png" %}'></a>
+					</div>
+					<div class="span2">
+						<a href="#"><img alt="" src='{% static "img/35.png" %}'></a>
+					</div>
+					<div class="span2">
+						<a href="#"><img alt="" src='{% static "img/4.png" %}'></a>
+					</div>
+				</div>
+			</section>
+			<section id="footer-bar">
+				<div class="row">
+					<div class="span3">
+						<h4>Navigation</h4>
+						<ul class="nav">
+							<li><a href="/posts/">iFarm</a></li>  
+							<li><a href="/posts/real_sign_up">Sign Up</a></li>
+							<li><a href="#">Contact Us</a></li>
+							<li><a href="/posts/login">Login</a></li>							
+						</ul>					
+					</div>
+					<div class="span4">
+						<h4>My Account</h4>
+						<ul class="nav">
+							<li><a href="#">My Account</a></li>
+							<li><a href="#">Order History</a></li>
+							<li><a href="#">Wish List</a></li>
+							<li><a href="#">Newsletter</a></li>
+						</ul>
+					</div>
+					<div class="span5">
+						<p class="logo"><img src='{% static "img/logo.png" %}' class="site_logo" alt=""></p>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. the  Lorem Ipsum has been the industry's standard dummy text ever since the you.</p>
+						<br/>
+						<span class="social_icons">
+							<a class="facebook" href="#">Facebook</a>
+							<a class="twitter" href="#">Twitter</a>
+							<a class="skype" href="#">Skype</a>
+							<a class="vimeo" href="#">Vimeo</a>
+						</span>
+					</div>					
+				</div>	
+			</section>
+<section id="copyright">
+        <span>Copyright 2017 iFarm. All rights reserved.</span>
+      </section>
+{% endblock %}
